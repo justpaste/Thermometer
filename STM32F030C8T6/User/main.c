@@ -57,7 +57,8 @@ const uint32_t Tobj18[111]=
 int main(void)
 {
 	uint8_t Tempi;
-	int32_t ADValue;
+	uint32_t ADValue;
+	uint32_t ADValueTemp=0;
 	float Votage;
 	uint16_t VotageTemp;
 	uint16_t TobjTemp;
@@ -97,7 +98,7 @@ int main(void)
 	//显示实际电池电压
 	BATADValue=Get_Adc_Average(ADC_Channel_1,4);
 	printf("BATADValue=%d\n",BATADValue);
-//	batteryupdate(BATADValue);
+	batteryupdate(BATADValue);
 	
 	//显示大号 88.8℃
 	POINT_COLOR=GREEN;
@@ -125,12 +126,12 @@ int main(void)
 	LCD_ShowChar33(142,190,0,48,0);		//C
 	//打开OLED背光
 	GPIO_SetBits(GPIOA,LED_Pin);
-	delay_ms(5000);
+	delay_ms(1000);
 	//清除小号 88.8℃
 	LCD_Clearpart(0,190,240,240,BLACK);
 	//清除大号 88.8℃
 	LCD_Clearpart(0,56,240,184,BLACK);
-//	显示大号 --.-℃
+	//显示大号 --.-℃
 	POINT_COLOR=WHITE;
 	LCD_Fill(10,130,60,142,WHITE);			//-
 	LCD_Fill(70,130,120,142,WHITE);			//-
@@ -157,21 +158,27 @@ int main(void)
 	Con_CS1237();
 	Init_CS1237();
 	Tempi=Read_CON();
-	printf("Tempi=%d\n",Tempi);
+	printf("Read_CON=%d\n",Tempi);
 	while(1)
-		
 	{
-//		delay_ms(2000);
-		if(ReadKey==0)
-		{
-			delay_ms(100);
-			if(ReadKey==0)
-			{
+		delay_ms(2000);
+//		if(ReadKey==0)
+//		{
+//			delay_ms(50);
+//			if(ReadKey==0)
+//			{
 				PoweroffCount=0;
 				PowerKeyFalg=true;
 				ADValue=Read_CS1237();
-				printf("ADValue=%d\n",ADValue);
-				ADValue+=ADValueCompensate;
+				ADValue=0x8388801;
+ 				printf("ADValue=%x\n",ADValue);
+//				if((ADValue & 0x800000) ==1)
+//				{
+					ADValueTemp=Code32bit_conversion(ADValue);
+					printf("ADValueTemp=%x\n",ADValueTemp);
+//				}
+				
+ 				ADValue+=ADValueCompensate;
 //				Read_CS1237数据是24位有符号数据，
 //				Bit24=0表示正，1表示负
 				Votage=((float)ADValue/(float)ADValueMax)*ADVref;
@@ -220,7 +227,6 @@ int main(void)
 					POINT_COLOR=RED;
 					LCD_ShowChar22(51,56,11,128,0);		//H
 					LCD_ShowChar22(125,56,12,128,0);	//I
-					
 				}
 				else
 				{
@@ -239,36 +245,36 @@ int main(void)
 				}
 				NTCTemp=Tempi+10-1;
 				printf("NTCTemp=%d\n",NTCTemp);
-			}
-		}
-		else
-		{
-			if(PowerKeyFalg==true && PoweroffCount>20 )
-			{
-				PoweroffCount=0;
-				PowerKeyFalg=false;
-				LCD_Clearpart(0,56,240,184,BLACK);
-				//显示大号 88.8℃
-				POINT_COLOR=WHITE;
-				LCD_Fill(10,130,60,142,WHITE);			//-
-				LCD_Fill(70,130,120,142,WHITE);			//-
-				Draw_Circle(137,152,0);					//.
-				Draw_Circle(137,152,1);					//.
-				Draw_Circle(137,152,2);					//.
-				Draw_Circle(137,152,3);					//.
-				Draw_Circle(137,152,4);					//.
-				Draw_Circle(137,152,5);					//.
-				LCD_Fill(150,130,200,142,WHITE);
-				Draw_Circle(205,70,4);					//.
-				Draw_Circle(205,70,3);					//.
-				LCD_ShowChar33(210,70,0,48,1);			//C
-			}
-			else if(PoweroffCount>200)
-			{
-				PoweroffCount=0;
-				SET_Power_L;
-			}
-		}
+//			}
+//		}
+//		else
+//		{
+//			if(PowerKeyFalg==true && PoweroffCount>20 )
+//			{
+//				PoweroffCount=0;
+//				PowerKeyFalg=false;
+//				LCD_Clearpart(0,56,240,184,BLACK);
+//				//显示大号 88.8℃
+//				POINT_COLOR=WHITE;
+//				LCD_Fill(10,130,60,142,WHITE);			//-
+//				LCD_Fill(70,130,120,142,WHITE);			//-
+//				Draw_Circle(137,152,0);					//.
+//				Draw_Circle(137,152,1);					//.
+//				Draw_Circle(137,152,2);					//.
+//				Draw_Circle(137,152,3);					//.
+//				Draw_Circle(137,152,4);					//.
+//				Draw_Circle(137,152,5);					//.
+//				LCD_Fill(150,130,200,142,WHITE);
+//				Draw_Circle(205,70,4);					//.
+//				Draw_Circle(205,70,3);					//.
+//				LCD_ShowChar33(210,70,0,48,1);			//C
+//			}
+//			else if(PoweroffCount>200)
+//			{
+//				PoweroffCount=0;
+//				SET_Power_L;
+//			}
+//		}
 		
 	}
 	

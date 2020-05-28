@@ -5,7 +5,7 @@
 <h2>Tool Versions:</h2>
 IDE-Version: μVision V5.29.0.0
 Copyright (C) 2019 ARM Ltd and ARM Germany GmbH. All rights reserved.
-License Information: cc cc, cc, LIC=76F5U-SBIZP-LQQ0Q-NC3V5-NQ06L-0Y0CR
+License Information: 1 czm, 1, LIC=32B1Q-NJA8N-KPWZY-I4HJG-IMF31-US9PP
  
 Tool Versions:
 Toolchain:       MDK-ARM Plus  Version: 5.29.0.0
@@ -21,13 +21,22 @@ Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.7.0
 Dialog DLL:      TARMCM1.DLL V1.14.1.0
  
 <h2>Project:</h2>
-E:\1czm工作资料\GithubFiles\Thermometer\STM32F030C8T6\Project\Power.uvprojx
-Project File Date:  04/03/2020
+E:\4Githubs\Thermometer\STM32F030C8T6\Project\Power.uvprojx
+Project File Date:  04/24/2020
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 6 (build 750)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'Power'
-".\Objects\Power.axf" - 0 Error(s), 0 Warning(s).
+compiling main.c...
+..\User\main.c(63): warning:  #177-D: variable "VotageTemp"  was declared but never referenced
+  	uint16_t VotageTemp;
+..\User\main.c(69): warning:  #550-D: variable "PowerKeyFalg"  was set but never used
+  	bool PowerKeyFalg;
+..\User\main.c: 2 warnings, 0 errors
+linking...
+Program Size: Code=16820 RO-data=22132 RW-data=712 ZI-data=1024  
+FromELF: creating hex file...
+".\Objects\Power.axf" - 0 Error(s), 2 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -38,7 +47,7 @@ Package Vendor: Keil
 
 <h2>Collection of Component include folders:</h2>
   .\RTE\_Power
-  C:\Users\cc\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32F0xx\Include
+  C:\Users\czm\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32F0xx\Include
 
 <h2>Collection of Component Files used:</h2>
 Build Time Elapsed:  00:00:00
