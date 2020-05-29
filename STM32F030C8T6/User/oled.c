@@ -884,24 +884,36 @@ void batteryupdate(uint16_t ADvalue)
 
 }
 
-void tempupdate(uint16_t TobjADvalue)
+void tempupdate(uint32_t TobjADvalue)
 {
-	uint8_t i,j;
+	uint32_t i,j;
+//	i=TobjADvalue/10000;
+//	i=TobjADvalue%10000;
+	
 	
 	POINT_COLOR=GREEN;
 	LCD_Clearpart(0,56,240,184,BLACK);
-	i=TobjADvalue/10;
-	j=TobjADvalue%10;
-	LCD_ShowNum22(0,56,i,128,2);	//88
-	Draw_Circle(135,154,4);			//.
-	Draw_Circle(135,154,3);			//.
-	Draw_Circle(135,154,2);			//.
-	Draw_Circle(135,154,1);			//.
-	Draw_Circle(135,154,0);			//.
-	LCD_ShowNum22(140,56,j,128,1);	//8
-	Draw_Circle(208,88,4);			//.
-	Draw_Circle(208,88,3);			//.
-	LCD_ShowChar33(214,78,0,48,0);	//C
+//	i=TobjADvalue/10;
+//	j=TobjADvalue%10;
+//	LCD_ShowNum22(0,56,i,128,2);	//88
+//	Draw_Circle(135,154,4);			//.
+//	Draw_Circle(135,154,3);			//.
+//	Draw_Circle(135,154,2);			//.
+//	Draw_Circle(135,154,1);			//.
+//	Draw_Circle(135,154,0);			//.
+//	LCD_ShowNum22(140,56,j,128,1);	//8
+//	Draw_Circle(208,88,4);			//.
+//	Draw_Circle(208,88,3);			//.
+//	LCD_ShowChar33(214,78,0,48,0);	//C
+	
+	
+	LCD_ShowNum33(0,56,TobjADvalue,48,8);	//
+//	LCD_ShowNum33(0,96,j,48,4);	//
+	
+	
+	
+	
+	
 }
 
 

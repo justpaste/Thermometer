@@ -1,6 +1,6 @@
 Dependencies for Project 'Power', Target 'Power': (DO NOT MODIFY !)
 CompilerVersion: 5060750::V5.06 update 6 (build 750)::ARMCC
-F (..\User\main.c)(0x5ECFA1FA)(-c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork -I ..\Libraries\CMSIS\Device\Include -I ..\Libraries\CMSIS\Include -I ..\Libraries\STM32F0xx_StdPeriph_Driver\inc -I ..\User-I.\RTE\_Power-IC:\Users\czm\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32F0xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="529" -DSTM32F030x8 -DUSE_STDPERIPH_DRIVER -DSTM32F030-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
+F (..\User\main.c)(0x5ED0C074)(-c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork -I ..\Libraries\CMSIS\Device\Include -I ..\Libraries\CMSIS\Include -I ..\Libraries\STM32F0xx_StdPeriph_Driver\inc -I ..\User-I.\RTE\_Power-IC:\Users\czm\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32F0xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="529" -DSTM32F030x8 -DUSE_STDPERIPH_DRIVER -DSTM32F030-o .\objects\main.o --omf_browse .\objects\main.crf --depend .\objects\main.d)
 I (..\Libraries\CMSIS\Device\Include\stm32f0xx.h)(0x5E9E6DE8)
 I (..\Libraries\CMSIS\Include\core_cm0.h)(0x5E9E6DE8)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9AD218)
@@ -39,7 +39,7 @@ I (..\User\tim3.h)(0x5E9E6DE9)
 I (..\User\cs1237.h)(0x5E9E6DE9)
 I (..\User\sys.h)(0x5E9E6DE9)
 I (..\User\w25qxx.h)(0x5E9E6DE9)
-I (..\User\oled.h)(0x5E9E6DE9)
+I (..\User\oled.h)(0x5ED0B994)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5D9AD21A)
 I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5D9AD218)
 F (..\User\stm32f0xx_it.c)(0x5E9E6DE9)(-c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork -I ..\Libraries\CMSIS\Device\Include -I ..\Libraries\CMSIS\Include -I ..\Libraries\STM32F0xx_StdPeriph_Driver\inc -I ..\User-I.\RTE\_Power-IC:\Users\czm\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32F0xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="529" -DSTM32F030x8 -DUSE_STDPERIPH_DRIVER -DSTM32F030-o .\objects\stm32f0xx_it.o --omf_browse .\objects\stm32f0xx_it.crf --depend .\objects\stm32f0xx_it.d)
@@ -240,7 +240,7 @@ I (..\Libraries\STM32F0xx_StdPeriph_Driver\inc\stm32f0xx_misc.h)(0x5E9E6DE8)
 I (..\User\usart1.h)(0x5E9E6DE9)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5D9AD21A)
 I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5D9AD218)
-F (..\User\cs1237.c)(0x5ECF9CF5)(-c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork -I ..\Libraries\CMSIS\Device\Include -I ..\Libraries\CMSIS\Include -I ..\Libraries\STM32F0xx_StdPeriph_Driver\inc -I ..\User-I.\RTE\_Power-IC:\Users\czm\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32F0xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="529" -DSTM32F030x8 -DUSE_STDPERIPH_DRIVER -DSTM32F030-o .\objects\cs1237.o --omf_browse .\objects\cs1237.crf --depend .\objects\cs1237.d)
+F (..\User\cs1237.c)(0x5ED068C2)(-c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork -I ..\Libraries\CMSIS\Device\Include -I ..\Libraries\CMSIS\Include -I ..\Libraries\STM32F0xx_StdPeriph_Driver\inc -I ..\User-I.\RTE\_Power-IC:\Users\czm\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32F0xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="529" -DSTM32F030x8 -DUSE_STDPERIPH_DRIVER -DSTM32F030-o .\objects\cs1237.o --omf_browse .\objects\cs1237.crf --depend .\objects\cs1237.d)
 I (..\User\cs1237.h)(0x5E9E6DE9)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5D9AD21A)
 I (..\User\sys.h)(0x5E9E6DE9)
@@ -351,8 +351,8 @@ I (..\User\MacroAndConst.h)(0x5E9E6DE9)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5D9AD21A)
 I (C:\Keil_v5\ARM\ARMCC\include\stdint.h)(0x5D9AD218)
 I (C:\Keil_v5\ARM\ARMCC\include\stdbool.h)(0x5D9AD218)
-F (..\User\oled.c)(0x5E9E6DE9)(-c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork -I ..\Libraries\CMSIS\Device\Include -I ..\Libraries\CMSIS\Include -I ..\Libraries\STM32F0xx_StdPeriph_Driver\inc -I ..\User-I.\RTE\_Power-IC:\Users\czm\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32F0xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="529" -DSTM32F030x8 -DUSE_STDPERIPH_DRIVER -DSTM32F030-o .\objects\oled.o --omf_browse .\objects\oled.crf --depend .\objects\oled.d)
-I (..\User\oled.h)(0x5E9E6DE9)
+F (..\User\oled.c)(0x5ED0BEC3)(-c --cpu Cortex-M0 -D__MICROLIB -g -O3 --apcs=interwork -I ..\Libraries\CMSIS\Device\Include -I ..\Libraries\CMSIS\Include -I ..\Libraries\STM32F0xx_StdPeriph_Driver\inc -I ..\User-I.\RTE\_Power-IC:\Users\czm\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32F0xx\Include-IC:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="529" -DSTM32F030x8 -DUSE_STDPERIPH_DRIVER -DSTM32F030-o .\objects\oled.o --omf_browse .\objects\oled.crf --depend .\objects\oled.d)
+I (..\User\oled.h)(0x5ED0B994)
 I (..\User\sys.h)(0x5E9E6DE9)
 I (..\Libraries\CMSIS\Device\Include\stm32f0xx.h)(0x5E9E6DE8)
 I (..\Libraries\CMSIS\Include\core_cm0.h)(0x5E9E6DE8)

@@ -160,7 +160,7 @@ void showbattery(void);
 void LCD_Clearpart(uint8_t x1,uint8_t y1,uint8_t x2,uint8_t y2,uint16_t Color);
 void batteryupdate(uint16_t ADvalue);
 void showbuzzer(void) ;
-void tempupdate(uint16_t TobjADvalue);
+void tempupdate(uint32_t TobjADvalue);
 void LCD_ShowChar44(uint16_t x,uint16_t y,uint8_t num,uint8_t Size,uint8_t mode);
 
 

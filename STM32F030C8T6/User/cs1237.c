@@ -310,17 +310,9 @@ void Cs1237IO_Init(void)
 uint32_t Code32bit_conversion(uint32_t CodeInput )
 {
 	uint32_t CodeOutput=0;
-	
-	
-	
-	CodeOutput= ~CodeOutput;
+	CodeOutput= ~CodeInput;
 	CodeOutput &= 0x007fffff;
 	CodeOutput += 1;
-//	if(CodeInput & 0x00800000)
-//	{
-//		CodeOutput |= 0x80000000;
-//	}
-//	CodeOutput &= 0xff7fffff;
 	return CodeOutput;
 }
 
