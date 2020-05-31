@@ -171,7 +171,7 @@ int main(void)
 				PowerKeyFalg=true;
 				ADValue=Read_CS1237();
 				printf("ADValue=%d\n",ADValue);
-				if((ADValue & 0x800000) !=0)
+				if((ADValue & 0x800000) !=0)		//负值
 				{
 					ADValue &= 0x007fffff;
 //					printf("ADValue=%d\n",ADValue);
@@ -180,7 +180,7 @@ int main(void)
 					ADValue=ADValueTemp;
 					ADValue=0x400000-ADValue;
 				}
-				else
+				else													//正值
 				{
 					printf("ADValue=%d\n",ADValue);
 					ADValue=0x400000+ADValue;
