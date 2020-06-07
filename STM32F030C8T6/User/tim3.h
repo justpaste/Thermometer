@@ -5,6 +5,7 @@
 void TIM_Config(vu16 arr,vu16 psc);
 extern uint16_t PoweroffCount;
 extern uint16_t BuzzerCount;
+extern uint16_t KeyModeCount;
 
 
 #endif

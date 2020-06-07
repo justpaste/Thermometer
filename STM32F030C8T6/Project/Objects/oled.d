@@ -1,5 +1,4 @@
 .\objects\oled.o: ..\User\oled.c
-.\objects\oled.o: ..\User\oled.h
 .\objects\oled.o: ..\User\sys.h
 .\objects\oled.o: ..\Libraries\CMSIS\Device\Include\stm32f0xx.h
 .\objects\oled.o: ..\Libraries\CMSIS\Include\core_cm0.h
@@ -32,6 +31,7 @@
 .\objects\oled.o: ..\Libraries\STM32F0xx_StdPeriph_Driver\inc\stm32f0xx_usart.h
 .\objects\oled.o: ..\Libraries\STM32F0xx_StdPeriph_Driver\inc\stm32f0xx_wwdg.h
 .\objects\oled.o: ..\Libraries\STM32F0xx_StdPeriph_Driver\inc\stm32f0xx_misc.h
+.\objects\oled.o: ..\User\oled.h
 .\objects\oled.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 .\objects\oled.o: ..\User\oledfont.h
 .\objects\oled.o: ..\User\delay.h

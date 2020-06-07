@@ -5,7 +5,7 @@
 <h2>Tool Versions:</h2>
 IDE-Version: ¦ÌVision V5.29.0.0
 Copyright (C) 2019 ARM Ltd and ARM Germany GmbH. All rights reserved.
-License Information: cc czm, cc, LIC=03C6R-KETJR-EVV1R-KDR6S-C4LUY-H6SVL
+License Information: 1 czm, 1, LIC=32B1Q-NJA8N-KPWZY-I4HJG-IMF31-US9PP
  
 Tool Versions:
 Toolchain:       MDK-ARM Plus  Version: 5.29.0.0
@@ -21,52 +21,40 @@ Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.7.0
 Dialog DLL:      TARMCM1.DLL V1.14.1.0
  
 <h2>Project:</h2>
-E:\GithubFiles\Thermometer\STM32F030C8T6\Project\Power.uvprojx
+E:\4Githubs\STM32F030C8T6\Project\Power.uvprojx
 Project File Date:  05/30/2020
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 6 (build 750)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
 Build target 'Power'
-compiling sys.c...
-compiling stm32f0xx_it.c...
-compiling delay.c...
 compiling main.c...
-..\User\main.c(61): warning:  #177-D: variable "Votage"  was declared but never referenced
+..\User\main.c(40): warning:  #177-D: variable "Calib25_AD"  was declared but never referenced
+  	uint32_t Calib25_AD=0x3fd092;
+..\User\main.c(41): warning:  #177-D: variable "Calib34_AD"  was declared but never referenced
+  	uint32_t Calib34_AD=0x40a008;
+..\User\main.c(42): warning:  #177-D: variable "Calib37_AD"  was declared but never referenced
+  	uint32_t Calib37_AD=0x40f274;
+..\User\main.c(43): warning:  #177-D: variable "Calib42_AD"  was declared but never referenced
+  	uint32_t Calib42_AD=0x417114;
+..\User\main.c(44): warning:  #177-D: variable "Diff25"  was declared but never referenced
+  	uint32_t Diff25;
+..\User\main.c(45): warning:  #177-D: variable "Diff34"  was declared but never referenced
+  	uint32_t Diff34;
+..\User\main.c(46): warning:  #177-D: variable "Diff37"  was declared but never referenced
+  	uint32_t Diff37;
+..\User\main.c(52): warning:  #177-D: variable "Votage"  was declared but never referenced
   	float Votage;
-..\User\main.c(62): warning:  #177-D: variable "VotageTemp"  was declared but never referenced
+..\User\main.c(53): warning:  #177-D: variable "VotageTemp"  was declared but never referenced
   	uint16_t VotageTemp;
-..\User\main.c(63): warning:  #177-D: variable "TobjTemp"  was declared but never referenced
-  	uint16_t TobjTemp;
-..\User\main.c: 3 warnings, 0 errors
-compiling adc.c...
-compiling tim3.c...
-compiling usart1.c...
-compiling Fonts.c...
-compiling cs1237.c...
-compiling spi.c...
-compiling w25qxx.c...
-compiling oled.c...
-..\User\oledfont.h(1208): error:  #146: too many initializer values
-..\User\oledfont.h(1279): error:  #65: expected a ";"
-..\User\oledfont.h(1290): warning:  #12-D: parsing restarts here after previous syntax error
-  };
-..\User\oled.c(635): warning:  #177-D: variable "enshow"  was declared but never referenced
-  	uint8_t enshow=0;
-..\User\oled.c(889): warning:  #177-D: variable "i"  was declared but never referenced
-  	uint32_t i,j;
-..\User\oled.c(889): warning:  #177-D: variable "j"  was declared but never referenced
-  	uint32_t i,j;
-..\User\oled.c: 4 warnings, 2 errors
-compiling stm32f0xx_adc.c...
-compiling stm32f0xx_gpio.c...
-compiling stm32f0xx_misc.c...
-compiling stm32f0xx_rcc.c...
-compiling stm32f0xx_usart.c...
-compiling stm32f0xx_dma.c...
-compiling system_stm32f0xx.c...
-compiling stm32f0xx_spi.c...
-compiling stm32f0xx_tim.c...
-".\Objects\Power.axf" - 2 Error(s), 7 Warning(s).
+..\User\main.c(59): warning:  #177-D: variable "Delay_Cnt"  was declared but never referenced
+  	uint8_t Delay_Cnt;
+..\User\main.c(66): warning:  #550-D: variable "CalibADRef"  was set but never used
+  	uint32_t CalibADRef;
+..\User\main.c: 11 warnings, 0 errors
+linking...
+Program Size: Code=21800 RO-data=39144 RW-data=76 ZI-data=5124  
+FromELF: creating hex file...
+".\Objects\Power.axf" - 0 Error(s), 11 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -80,8 +68,7 @@ Package Vendor: Keil
   C:\Users\czm\AppData\Local\Arm\Packs\Keil\STM32F0xx_DFP\2.0.0\Drivers\CMSIS\Device\ST\STM32F0xx\Include
 
 <h2>Collection of Component Files used:</h2>
-Target not created.
-Build Time Elapsed:  00:00:06
+Build Time Elapsed:  00:00:01
 </pre>
 </body>
 </html>

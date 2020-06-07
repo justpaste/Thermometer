@@ -28,12 +28,19 @@
 
 extern uint16_t W25QXX_TYPE;					//定义W25QXX芯片型号		   
 
-#define	W25QXX_CS 		PBout(14)  		//W25QXX的片选信号
-#define	W25QXX_CS_Pin 	GPIO_Pin_14 		//W25QXX的片选信号
+#define	W25QXX_CS 		PBout(14)  				//W25QXX的片选信号
+#define	W25QXX_CS_Pin 	GPIO_Pin_14 			//W25QXX的片选信号
 
 #define W25QXX_CS_H		GPIO_WriteBit(GPIOB,W25QXX_CS_Pin,(BitAction)(0x01))
 #define W25QXX_CS_L		GPIO_WriteBit(GPIOB,W25QXX_CS_Pin,(BitAction)(0x00))
 
+
+#define W25QXX_PA5_H		GPIO_WriteBit(GPIOA,GPIO_Pin_5,(BitAction)(0x01))
+#define W25QXX_PA5_L		GPIO_WriteBit(GPIOA,GPIO_Pin_5,(BitAction)(0x00))
+#define W25QXX_PA6_H		GPIO_WriteBit(GPIOA,GPIO_Pin_6,(BitAction)(0x01))
+#define W25QXX_PA6_L		GPIO_WriteBit(GPIOA,GPIO_Pin_6,(BitAction)(0x00))
+#define W25QXX_PA7_H		GPIO_WriteBit(GPIOA,GPIO_Pin_7,(BitAction)(0x01))
+#define W25QXX_PA7_L		GPIO_WriteBit(GPIOA,GPIO_Pin_7,(BitAction)(0x00))
 
 ////////////////////////////////////////////////////////////////////////////
  

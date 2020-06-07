@@ -30,7 +30,6 @@
 //******************************************************************************/
 #ifndef __OLED_H
 #define __OLED_H			  	 
-#include "sys.h"
 #include "stdlib.h"	 
 
 #define LCD_W 240
@@ -38,6 +37,22 @@
 #define	uint8_t unsigned char
 #define	uint16_t unsigned int
 #define	uint32_t unsigned long
+	
+
+extern const uint8_t Chinese32[];
+extern const uint8_t Chinese64[];
+extern const uint8_t Charasc16[];
+extern const uint8_t Charasc24[];
+extern const uint8_t Charasc32[];
+extern const uint8_t Charasc48[];
+extern const uint8_t Charasc64[];
+extern const uint8_t Charasc96[];
+extern const uint8_t Charasc128[];
+extern const uint8_t buzzer[];
+extern const uint8_t battery[];
+extern const uint8_t image[];
+extern const uint8_t ty[9656]; 
+extern const uint8_t windows[25538];
 
 //OLED模式设置
 //0:4线串行模式
@@ -59,8 +74,13 @@
 
 #define	LED_Pin		GPIO_Pin_8		//PA8
 #define	POWER_Pin	GPIO_Pin_11		//PA11
-#define	KEY_Pin		GPIO_Pin_15		//PA15
 #define	Buzzer_Pin	GPIO_Pin_4		//PA4
+
+
+#define	KEYRead		GPIO_Pin_15		//PA15
+#define	KEYMode		GPIO_Pin_6		//PF6
+#define	KEYUp		GPIO_Pin_12		//PA12
+#define	KEYDown		GPIO_Pin_7		//PF7
 
 
 #define	D0_Pin	GPIO_Pin_0		//PB0
@@ -116,7 +136,12 @@
 #define SET_Buzzer_H   GPIO_WriteBit(GPIOA,Buzzer_Pin,(BitAction)(0x01))
 #define SET_Buzzer_L   GPIO_WriteBit(GPIOA,Buzzer_Pin,(BitAction)(0x00))
 
-#define ReadKey    GPIO_ReadInputDataBit(GPIOA, KEY_Pin)
+#define ReadKey    	GPIO_ReadInputDataBit(GPIOA, KEYRead)
+#define KeyMode    	GPIO_ReadInputDataBit(GPIOF, KEYMode)
+#define Keyup    	GPIO_ReadInputDataBit(GPIOA, KEYUp)
+#define Keydown    	GPIO_ReadInputDataBit(GPIOF, KEYDown)
+
+
 //******************************************************************************
 
 #define OLED_CMD  0	//写命令
@@ -138,32 +163,33 @@ void Draw_Circle(uint16_t x0,uint16_t y0,uint8_t r);
 void LCD_DrawLine(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2);
 void LCD_DrawRectangle(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2);		   
 void LCD_Fill(uint16_t xsta,uint16_t ysta,uint16_t xend,uint16_t yend,uint16_t color);
-void LCD_ShowChar(uint16_t x,uint16_t y,uint8_t num,uint8_t mode);//显示一个字符
-void LCD_ShowNum(uint16_t x,uint16_t y,uint32_t num,uint8_t len);//显示数字
-void LCD_Show2Num(uint16_t x,uint16_t y,uint16_t num,uint8_t len);//显示2个数字
-void LCD_ShowString(uint16_t x,uint16_t y,const uint8_t *p);		 //显示一个字符串,16字体
- 
-void showhanzi(unsigned int x,unsigned int y,unsigned char index);
 
-void ssd1331_IOInit(void);
+void LCD_ShowChar(uint16_t x,uint16_t y,uint8_t num,uint8_t Size,const uint8_t *Charasc,uint8_t mode);
+void LCD_ShowNum(uint16_t x,uint16_t y,uint32_t num,uint8_t Size,const uint8_t *Charasc,uint8_t len,uint8_t mode);
+void LCD_ShowString(uint16_t x,uint16_t y,const uint8_t *p);		 //显示一个字符串,16字体
+//void ShowChinese(uint16_t x,uint16_t y,uint8_t w,uint8_t h,uint8_t index);
+void ShowChinese(uint16_t x,uint16_t y,uint8_t w,uint8_t h,const uint8_t *Chineseasc,uint8_t index);	
+void ShowImage(uint16_t x,uint16_t y,uint8_t l,uint8_t h,const uint8_t *Charasc);
+void ShowClourImage(uint16_t x,uint16_t y,uint8_t l,uint8_t h,const uint8_t *Charasc); 
+
+
+
+
+uint32_t mypow(uint8_t m,uint8_t n);
+
+void St7789v_IOInit(void);
 void LCD_Reset(void);
 void LCD_DataWrite(uint8_t data);
 void LCD_CmdWrite(uint8_t cmd);			   
 void LCD_Data16Write(uint16_t data);		
 void SSD1331_Send_Byte(uint8_t chData);
 void showimage(void);
-void LCD_ShowChar22(uint16_t x,uint16_t y,uint8_t num,uint8_t Size,uint8_t mode);
-void LCD_ShowNum22(uint16_t x,uint16_t y,uint32_t num,uint8_t Size,uint8_t len);
-void LCD_ShowChar33(uint16_t x,uint16_t y,uint8_t num,uint8_t Size,uint8_t mode);
-void LCD_ShowNum33(uint16_t x,uint16_t y,uint32_t num,uint8_t Size,uint8_t len);
 void showbattery(void);
 void LCD_Clearpart(uint8_t x1,uint8_t y1,uint8_t x2,uint8_t y2,uint16_t Color);
 void batteryupdate(uint16_t ADvalue);
 void showbuzzer(void) ;
-void tempupdate(uint32_t TobjADvalue);
-void LCD_ShowChar44(uint16_t x,uint16_t y,uint8_t num,uint8_t Size,uint8_t mode);
-
-
+void tempupdate(uint32_t Tobj,uint8_t Ntc);
+void tempupdatecalib(uint32_t Tobj,uint8_t Ntc);
 
 //画笔颜色
 //#define WHITE         	 0xFFFF

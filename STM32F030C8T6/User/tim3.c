@@ -13,6 +13,8 @@ uint16_t PoweroffCount;
 uint16_t UsCount;
 uint16_t BuzzerCount;
 uint8_t BuzzerDriveCount=0;
+uint16_t KeyModeCount;
+
 /* Private function prototypes -----------------------------------------------*/
 
 /* Private functions ---------------------------------------------------------*/
@@ -179,6 +181,7 @@ void TIM3_IRQHandler(void)
 			{
 				UsCount=0;
 				PoweroffCount++;
+				KeyModeCount++;
 				if(BuzzerCount>0)
 				{
 					BuzzerCount--;
